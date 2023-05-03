@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "77531012364",
+    "project_id": "tarefasjp-b1c53",
+    "storage_bucket": "tarefasjp-b1c53.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77531012364:android:b1916323d5e33f0d46fd29",
+        "android_client_info": {
+          "package_name": "com.mary.tarefasjp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77531012364-tms8svqvd8n5rhtjjl9b6jvhknsc9miq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4pspLcNf2qpZByqXmh_y3GzpcvgkWn6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77531012364-tms8svqvd8n5rhtjjl9b6jvhknsc9miq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

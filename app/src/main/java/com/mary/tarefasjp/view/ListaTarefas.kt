@@ -14,6 +14,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.google.firebase.ktx.Firebase
 import com.mary.tarefasjp.R
 import com.mary.tarefasjp.itemlista.TarefaItem
 import com.mary.tarefasjp.model.Tarefa
@@ -26,6 +27,9 @@ import com.mary.tarefasjp.ui.theme.WHITE
 fun ListaTarefas(
     navController: NavController
 ){
+
+    Firebase
+
     Scaffold(
         topBar = {
             TopAppBar(
