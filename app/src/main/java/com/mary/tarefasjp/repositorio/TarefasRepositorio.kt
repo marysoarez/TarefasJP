@@ -21,4 +21,8 @@ class TarefasRepositorio{
     fun recuperarTarefas(): Flow<MutableList<Tarefa>>{
         return dataSource.recuperarTarefas()
     }
+
+    fun deletarTarefas(tarefa: String){
+        dataSource.deletarTarefa(tarefa)
+    }
 }

@@ -11,6 +11,7 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
@@ -31,6 +32,9 @@ fun ListaTarefas(
 ){
 
    val tarefasRepositorio = TarefasRepositorio ()
+   val context = LocalContext.current
+
+
     Scaffold(
         topBar = {
             TopAppBar(
@@ -70,7 +74,7 @@ fun ListaTarefas(
         LazyColumn{
             itemsIndexed(listaTarefas){
                 position, _, ->
-                TarefaItem(position = position, listaTarefas = listaTarefas)
+                TarefaItem(position = position, listaTarefas = listaTarefas, context = context, navController = navController)
             }
         }
 
