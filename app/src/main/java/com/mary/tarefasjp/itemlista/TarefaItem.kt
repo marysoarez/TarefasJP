@@ -71,16 +71,16 @@ fun TarefaItem(
 
     var nivelDePrioridade: String=when(prioridade){
         0-> {
-            "Sem Prioridade"
+            "SEM PRIORIDADE"
         }
         1->{
             "PRIORIDADE BAIXA"
         }
         2->{
-            "prioridade média"
+            "PRIORIDADE MÉDIA"
         }
         else -> {
-            "prioridade alta"
+            "PRIORIDADE ALTA"
         }
     }
 
