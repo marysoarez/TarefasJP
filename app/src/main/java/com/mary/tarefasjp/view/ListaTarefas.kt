@@ -9,6 +9,7 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
@@ -18,6 +19,7 @@ import com.google.firebase.ktx.Firebase
 import com.mary.tarefasjp.R
 import com.mary.tarefasjp.itemlista.TarefaItem
 import com.mary.tarefasjp.model.Tarefa
+import com.mary.tarefasjp.repositorio.TarefasRepositorio
 import com.mary.tarefasjp.ui.theme.BLACK
 import com.mary.tarefasjp.ui.theme.PINKY
 import com.mary.tarefasjp.ui.theme.WHITE
@@ -28,8 +30,7 @@ fun ListaTarefas(
     navController: NavController
 ){
 
-    Firebase
-
+   val tarefasRepositorio = TarefasRepositorio ()
     Scaffold(
         topBar = {
             TopAppBar(
@@ -64,33 +65,12 @@ fun ListaTarefas(
 
 
     ) {
-        val listaTarefas: MutableList<Tarefa> = mutableListOf(
-            Tarefa(
-                tarefa = "Jogar Futebol",
-                descricao = "Tirar um tempino para jogar futebol",
-                prioridade = 0
-            ),
-            Tarefa(
-                tarefa = "ir ao cinema",
-                descricao = "vai sair Super mario",
-                prioridade = 1
-            ),
-            Tarefa(
-                tarefa = "ir para a faculdade",
-                descricao = "Tirar um tempino para jogar futebol",
-                prioridade = 2
-            ),
-            Tarefa(
-                tarefa = "GRAVE",
-                descricao = "Tirar um tempino para jogar futebol",
-                prioridade = 3
-            )
-        )
+        val listaTarefas = tarefasRepositorio.recuperarTarefas().collectAsState(mutableListOf()).value
 
         LazyColumn{
             itemsIndexed(listaTarefas){
-                position, _ ->
-                TarefaItem(position, listaTarefas)
+                position, _, ->
+                TarefaItem(position = position, listaTarefas = listaTarefas)
             }
         }
 
